@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87bf4d4d-38e3-4544-bc4e-1727beb663d4" name="Changes" comment="First commit ProjectUniversity_SkillFactory" />
+    <list default="true" id="87bf4d4d-38e3-4544-bc4e-1727beb663d4" name="Changes" comment="Second commit ProjectUniversity_SkillFactory">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,11 +83,19 @@
       <option name="project" value="LOCAL" />
       <updated>1696496406022</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Second commit ProjectUniversity_SkillFactory">
+      <created>1696497059637</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696497059637</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit ProjectUniversity_SkillFactory" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit ProjectUniversity_SkillFactory" />
+    <MESSAGE value="Second commit ProjectUniversity_SkillFactory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second commit ProjectUniversity_SkillFactory" />
   </component>
 </project>
