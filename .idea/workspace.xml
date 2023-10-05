@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87bf4d4d-38e3-4544-bc4e-1727beb663d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/StudyProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/University.java" afterDir="false" />
-    </list>
+    <list default="true" id="87bf4d4d-38e3-4544-bc4e-1727beb663d4" name="Changes" comment="First commit ProjectUniversity_SkillFactory" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,6 +74,18 @@
       <option name="presentableId" value="Default" />
       <updated>1696413718148</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit ProjectUniversity_SkillFactory">
+      <created>1696496406022</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696496406022</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit ProjectUniversity_SkillFactory" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit ProjectUniversity_SkillFactory" />
   </component>
 </project>
