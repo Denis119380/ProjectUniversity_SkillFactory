@@ -1,16 +1,13 @@
 package org.example;
 
-public class University {
-    String id, fullName, shortName;
-    int yearOfFoundation;
-    StudyProfile mainProfile;
+import org.example.enums.StudyProfile;
 
-    public University(String id, String fullName, String shortName, int yearOfFoundation, StudyProfile mainProfile) {
-        this.id = id;
-        this.fullName = fullName;
-        this.shortName = shortName;
-        this.yearOfFoundation = yearOfFoundation;
-        this.mainProfile = mainProfile;
+public class University {
+    private String id, fullName, shortName;
+    private int yearOfFoundation;
+    private StudyProfile mainProfile;
+
+    public University() {
     }
 
     public String getId() {

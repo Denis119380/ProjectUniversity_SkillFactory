@@ -1,19 +1,23 @@
 package org.example;
 
+import org.example.comparator.StudentComparator;
+import org.example.comparator.UniversityComparator;
+import org.example.enums.StudEnumComparators;
+import org.example.enums.UnivEnumComparators;
+
+import java.io.IOException;
+import java.util.List;
+
 public class Main {
-    public static void main(String[] args) {
 
-        University universityOne = new University("American1", "Massachusetts Institute of Technology", "MIT",
-                1861, StudyProfile.Economics);
-        University universityTwo = new University("Swiss1", "Swiss Federal Institute of Technology Zürich",
-                "ETH Zürich", 1855, StudyProfile.PhysicsScience);
+    public static void main(String[] args) throws IOException {
 
-        Student studentOne = new Student("Ben Bernanke", "Mit1", 1, 89.99f);
-        Student studentTwo = new Student("Albert Einstein", "Eth1", 1, 88.99f);
+        List<University> list = ReadUnivStud.readUniversity("src/main/resources/universityInfo.xlsx");
+        UniversityComparator universityComparator = Utility.getUnivComparator(UnivEnumComparators.UNIV_YEAR_OF_FOUNDATION);
+        list.stream().sorted(universityComparator).forEach(System.out :: println);
 
-        System.out.println(universityOne);
-        System.out.println(universityTwo);
-        System.out.println(studentOne);
-        System.out.println(studentTwo);
+        List<Student> list1 = ReadUnivStud.readStudent("src/main/resources/universityInfo.xlsx");
+        StudentComparator studentComparator = Utility.getStudComparator(StudEnumComparators.STUD_AVG_EXAM_SCORE);
+        list1.stream().sorted(studentComparator).forEach(System.out :: println);
     }
 }
