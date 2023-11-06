@@ -3,6 +3,8 @@ package org.example;
 import org.example.comparator.*;
 import org.example.enums.StudEnumComparators;
 import org.example.enums.UnivEnumComparators;
+import org.example.model.Student;
+import org.example.model.University;
 
 public class Utility {
     private Utility() {

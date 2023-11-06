@@ -11,4 +11,9 @@ public enum StudyProfile {
     StudyProfile(String str) {
         this.description = str;
     }
+
+
+    public String getDescription() {
+        return description;
+    }
 }

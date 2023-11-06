@@ -1,6 +1,6 @@
 package org.example.comparator;
 
-import org.example.University;
+import org.example.model.University;
 
 public class UnivYearOfFoundation implements UniversityComparator{
     @Override
