@@ -1,4 +1,4 @@
-package org.example;
+package org.example.util;
 
 import org.apache.commons.lang3.StringUtils;
 import org.example.enums.StudyProfile;
@@ -12,10 +12,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalDouble;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class StatisticUtil {
+    private StatisticUtil() {
+    }
+    private static final Logger logger = Logger.getLogger(StatisticUtil.class.getName());
     public static List<Statistics> methStatistic(List<University> universities, List<Student> students) {
+
+        logger.log(Level.INFO, "Method start. Statistic.");
 
         List<Statistics> statisticsList = new ArrayList<>();
 
@@ -54,6 +61,7 @@ public class StatisticUtil {
             avgExamScore.ifPresent(value -> statistics.setAvgExamScore((float) BigDecimal.valueOf(value)
                     .setScale(2, RoundingMode.HALF_UP).doubleValue()));
         });
+        logger.log(Level.INFO, "Method end. Statistic.");
         return statisticsList;
     }
 }

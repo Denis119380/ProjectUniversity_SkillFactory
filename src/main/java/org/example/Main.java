@@ -4,43 +4,43 @@ import org.example.comparator.StudentComparator;
 import org.example.comparator.UniversityComparator;
 import org.example.enums.StudEnumComparators;
 import org.example.enums.UnivEnumComparators;
+import org.example.io.ReadUnivStud;
+import org.example.io.XlsWriter;
 import org.example.model.Statistics;
 import org.example.model.Student;
 import org.example.model.University;
+import org.example.util.StatisticUtil;
+import org.example.util.Utility;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
+
+    public static void main(String[] args) {
+
+        try {
+            LogManager.getLogManager().readConfiguration(Main.class.getResourceAsStream("/logging.properties"));
+        } catch (IOException e) {
+            System.out.println("Error LogManager. " + e);
+        }
+        logger.log(Level.INFO, "Starting application.");
 
         List<University> list = ReadUnivStud.readUniversity("src/main/resources/universityInfo.xlsx");
         UniversityComparator universityComparator = Utility.getUnivComparator(UnivEnumComparators.UNIV_YEAR_OF_FOUNDATION);
-        String jsonUniversities = JsonUtil.universitiesListToJson(list);
-        System.out.println(jsonUniversities);
-        List<University> newList = JsonUtil.jsonToUniversitiesList(jsonUniversities);
-        System.out.println(list.size() == newList.size());
-        list.forEach(university -> {
-            String universityJson = JsonUtil.universityToJson(university);
-            System.out.println(universityJson);
-            System.out.println(JsonUtil.jsonToUniversity(universityJson));
-        });
-
+        list.sort(universityComparator);
 
         List<Student> list1 = ReadUnivStud.readStudent("src/main/resources/universityInfo.xlsx");
         StudentComparator studentComparator = Utility.getStudComparator(StudEnumComparators.STUD_AVG_EXAM_SCORE);
-        String jsonStudents = JsonUtil.studentsListToJson(list1);
-        System.out.println(jsonStudents);
-        List<Student> newList1 = JsonUtil.jsonToStudentsList(jsonStudents);
-        System.out.println(list1.size() == newList1.size());
-        list1.forEach(student -> {
-            String studentJson = JsonUtil.studentToJson(student);
-            System.out.println(studentJson);
-            System.out.println(JsonUtil.jsonToStudent(studentJson));
-        });
 
         List<Statistics> statistics = StatisticUtil.methStatistic(list, list1);
         XlsWriter.write(statistics, "statistics.xlsx");
+
+        logger.log(Level.INFO, "Ending application.");
     }
 }

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.io;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -8,9 +8,16 @@ import org.example.model.Statistics;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class XlsWriter {
+    private XlsWriter() {
+    }
+    private static final Logger logger = Logger.getLogger(XlsWriter.class.getName());
     public static void write(List<Statistics> statistics, String path) {
+        logger.log(Level.INFO, "Writing start.");
+
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("Статистика");
 
@@ -63,7 +70,9 @@ public class XlsWriter {
         try (FileOutputStream fos = new FileOutputStream(path)){
             workbook.write(fos);
         } catch (IOException e) {
-            System.out.println("Error IO");
+            logger.log(Level.SEVERE, "Writing failed.", e);
+            return;
         }
+        logger.log(Level.INFO, "Writing end. Successful.");
     }
 }

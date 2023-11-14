@@ -1,4 +1,4 @@
-package org.example;
+package org.example.util;
 
 import org.example.comparator.*;
 import org.example.enums.StudEnumComparators;
