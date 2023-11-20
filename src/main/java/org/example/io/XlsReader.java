@@ -15,13 +15,13 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ReadUnivStud {
+public class XlsReader {
 
-    private ReadUnivStud() {
+    private XlsReader() {
 
     }
 
-    private static final Logger logger = Logger.getLogger(ReadUnivStud.class.getName());
+    private static final Logger logger = Logger.getLogger(XlsReader.class.getName());
 
     public static List<University> readUniversity(String filePath) {
         List<University> list = new ArrayList<>();
